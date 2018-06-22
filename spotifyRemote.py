@@ -21,7 +21,7 @@ repeating = LED(13)
 
 
 def login_to_spotify():
-	print "Logging in to Spotify..."
+	print("Logging in to Spotify...")
 
 	token = spotipy.util.prompt_for_user_token(
 		username = "qeucjthqoqgkg3tcpxmwhbrpw",
@@ -32,7 +32,7 @@ def login_to_spotify():
 	spotify = spotipy.Spotify(auth = token)
 
 	user = spotify.current_user()
-	print "Logged in as " + user["id"]
+	print("Logged in as " + user["id"])
 
 	return spotify
 
@@ -84,7 +84,7 @@ def toggle_play():
 
 
 def play_favorite():
-	print "This is your task"
+	print("This is your task")
 
 
 # Main program starts here
@@ -105,5 +105,5 @@ repeat.when_pressed = toggle_repeat
 
 favorite.when_pressed = play_favorite
 
-print "Waiting for input..."
+print("Waiting for input...")
 pause()
