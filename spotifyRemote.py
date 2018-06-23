@@ -1,10 +1,10 @@
 from gpiozero import LED, Button
 import spotipy, spotipy.util
-from dotenv import load_dotenv, find_dotenv
 from signal import pause
 
-# Interpret environment variables
-load_dotenv(find_dotenv())
+# Credentials
+client_id = "..."
+client_secret = "..."
 
 # Button inputs
 previous_track = Button(21)
@@ -26,7 +26,9 @@ def login_to_spotify():
 	token = spotipy.util.prompt_for_user_token(
 		username = "qeucjthqoqgkg3tcpxmwhbrpw",
 		scope = "user-modify-playback-state,user-read-playback-state,user-read-currently-playing",
-		redirect_uri = "http://localhost/"
+		redirect_uri = "http://localhost/",
+		client_id = client_id,
+		client_secret = client_secret
 	)
 
 	spotify = spotipy.Spotify(auth = token)
