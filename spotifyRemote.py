@@ -5,6 +5,7 @@ from signal import pause
 # Credentials
 client_id = "..."
 client_secret = "..."
+username = "..."
 
 # Button inputs
 previous_track = Button(21)
@@ -24,7 +25,7 @@ def login_to_spotify():
 	print("Logging in to Spotify...")
 
 	token = spotipy.util.prompt_for_user_token(
-		username = "qeucjthqoqgkg3tcpxmwhbrpw",
+		username = username,
 		scope = "user-modify-playback-state,user-read-playback-state,user-read-currently-playing",
 		redirect_uri = "http://localhost/",
 		client_id = client_id,
